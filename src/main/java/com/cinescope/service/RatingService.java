@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RatingService {
@@ -18,12 +19,12 @@ public class RatingService {
         return ratingRepository.save(rating);
     }
 
-    // Busca avaliações por ID do filme
-    public List<Rating> getRatingsByMovieId(Long movieId) {
-        return ratingRepository.findByMovieId(movieId);
+    // Retorna uma avaliação pelo ID
+    public Optional<Rating> getRatingById(Long id) {
+        return ratingRepository.findById(id);
     }
 
-    // Lista todas as avaliações
+    // Retorna todas as avaliações
     public List<Rating> getAllRatings() {
         return ratingRepository.findAll();
     }
