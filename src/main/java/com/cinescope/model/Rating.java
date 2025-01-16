@@ -22,12 +22,19 @@ public class Rating {
     @Column(length = 500)
     private String comment;
 
-    // Construtores, Getters e Setters
+    // Construtor padrão
     public Rating() {}
 
+    // Construtor principal para testes e uso geral
     public Rating(Movie movie, User user, int score, String comment) {
         this.movie = movie;
         this.user = user;
+        this.score = score;
+        this.comment = comment;
+    }
+
+    // Construtor adicional para simplificar os testes 
+    public Rating(int score, String comment) {
         this.score = score;
         this.comment = comment;
     }
