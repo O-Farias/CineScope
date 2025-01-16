@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -21,6 +22,11 @@ public class UserService {
     // Busca usuário por e-mail
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    // Busca usuário por ID
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
     }
 
     // Adiciona um novo usuário
