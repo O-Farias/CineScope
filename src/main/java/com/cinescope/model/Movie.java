@@ -9,8 +9,10 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false) // O título é obrigatório
     private String title;
 
+    @Column(nullable = false) // O gênero também é obrigatório
     private String genre;
 
     @Column(length = 1000) // Permite descrições mais longas
